@@ -6,21 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portfolio | Yasatsawin</title>
     <link rel="stylesheet" href="NicetyStyle.css" />
+    <link rel="icon" type="image/png" href="LOGO.PNG">
+    <link rel="apple-touch-icon" href="LOGO.PNG">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="loading-text">Yasatsawin Portfolio</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
     <!-- ===== NAV ===== -->
     <div class="nav-wrap">
         <nav class="nav">
-            <div class="brand">Yasatsawin Panyawai | Portfolio</div>
+            <div class="brand">
+                <i class="fas fa-terminal"></i>
+                Yasatsawin Panyawai | Portfolio
+            </div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#timeline">Timeline</a>
-                <a href="#projects">Project</a>
-                <a href="#skills">Skills</a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </a>
+                <a href="#timeline" class="nav-link">
+                    <i class="fas fa-clock"></i>
+                    <span>Timeline</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Project</span>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Skills</span>
+                </a>
             </div>
             <div class="nav-cta">
-                <a class="btn" href="#contact">Contact</a>
+                <a class="btn" href="#contact">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
             </div>
         </nav>
     </div>
@@ -30,18 +76,56 @@
         <div class="orb" aria-hidden="true"></div>
         <div class="hero-card">
             <div class="pfp">
-                <img src="img/Nicety.JPG" alt="Profile" />
+                <div class="pfp-container">
+                    <img src="img/Nicety.JPG" alt="Profile" />
+                </div>
+                <div class="pfp-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-label">Skills</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="19">0</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-content">
-                <div class="eyebrow">PORTFOLIO</div>
-                <h1>Hi i'm <span style="white-space:nowrap;">Yasatsawin Panyawai</span><br />A Data Scientist</h1>
+                <div class="eyebrow">
+                    <i class="fas fa-star"></i>
+                    PORTFOLIO
+                </div>
+                <h1 class="typing-text">Hi i'm <span style="white-space:nowrap;">Yasatsawin Panyawai</span><br /> A Data
+                    Scientist</h1>
                 <p class="lead">A Data Scientist passionate about transforming complex data into actionable insights for
                     the team.</p>
                 <div class="labels">
-                    <span class="chip">HTML/CSS</span>
-                    <span class="chip">Java Script</span>
-                    <span class="chip">Kotlin</span>
-                    <span class="chip">Spring boot</span>
+                    <span class="chip">
+                        <i class="fab fa-html5"></i>
+                        HTML/CSS
+                    </span>
+                    <span class="chip">
+                        <i class="fab fa-js-square"></i>
+                        Java Script
+                    </span>
+                    <span class="chip">
+                        <i class="fab fa-android"></i>
+                        Kotlin
+                    </span>
+                    <span class="chip">
+                        <i class="fas fa-leaf"></i>
+                        Spring boot
+                    </span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        View Projects
+                    </a>
                 </div>
             </div>
         </div>
@@ -51,46 +135,116 @@
         <!-- ===== ABOUT ===== -->
         <section id="about" class="section">
             <div class="wrap">
-                <h2>About</h2>
-                <p>Birth day : 08 October 2005 <br />
-                    I’m a passionate coder who loves turning ideas into clean, efficient, and functional code. I enjoy
-                    exploring new technologies, solving challenging problems, and continuously improving my skills to
-                    build projects that are both practical and elegant.
-
-                    When I’m not coding, I like to experiment with web design, learn about data, and discover creative
-                    ways to make digital experiences smoother and more enjoyable.</p>
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-user-circle"></i>
+                        About
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                <!-- <div class="about-content"> -->
+                <div class="about-text">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Birthday</h3>
+                            <p>08 October 2005</p>
+                        </div>
+                        <div class="about-icon">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Favorite Football Tram</h3>
+                            <p>Manchester United</p>
+                        </div>
+                        <div class="about-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Favorite Food</h3>
+                            <p>McDonald</p>
+                        </div>
+                        <div class="about-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <div class="about-info">
+                            <h3>Hobby</h3>
+                            <p>Basket ball</p>
+                        </div>
+                    </div>
+                    <p>I'm a passionate coder who loves turning ideas into clean, efficient, and functional code. I
+                        enjoy
+                        exploring new technologies, solving challenging problems, and continuously improving my skills
+                        to
+                        build projects that are both practical and elegant.</p>
+                    <p>When I'm not coding, I like to experiment with web design, learn about data, and discover
+                        creative
+                        ways to make digital experiences smoother and more enjoyable.</p>
+                </div>
+                <!-- <div class="about-visual">
+                        <div class="floating-card">
+                            <i class="fas fa-code"></i>
+                            <span>Clean Code</span>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Innovation</span>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fas fa-users"></i>
+                            <span>Teamwork</span>
+                        </div>
+                    </div> -->
+                <!-- </div> -->
             </div>
         </section>
 
-        <!-- ===== TIMELINE (โรงเรียน → มหาวิทยาลัย → ปัจจุบัน) ===== -->
+        <!-- ===== TIMELINE ===== -->
         <section id="timeline" class="section">
             <div class="wrap">
-                <h2>Learning Journey & Timeline</h2>
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-road"></i>
+                        Learning Journey & Timeline
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
                 <div class="timeline">
-                    <div class="t-item">
-                        <div class="t-dot"></div>
+                    <div class="t-item" data-aos="fade-right">
+                        <div class="t-dot">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                         <div class="t-card">
                             <div class="t-title">Kowit tamrong School</div>
                             <div class="t-meta">Primary education</div>
-                            <div>2010-2013</div>
+                            <div class="t-year">2010-2013</div>
+                            <div class="t-description">Start learning and developing basic skills</div>
                         </div>
                     </div>
 
-                    <div class="t-item">
-                        <div class="t-dot"></div>
+                    <div class="t-item" data-aos="fade-left">
+                        <div class="t-dot">
+                            <i class="fas fa-book"></i>
+                        </div>
                         <div class="t-card">
                             <div class="t-title">Rangsee vittaya School</div>
                             <div class="t-meta">Secondary education</div>
-                            <div>2014-2023</div>
+                            <div class="t-year">2014-2023</div>
+                            <div class="t-description">Develop programming and technology skills</div>
                         </div>
                     </div>
 
-                    <div class="t-item">
-                        <div class="t-dot"></div>
+                    <div class="t-item" data-aos="fade-right">
+                        <div class="t-dot">
+                            <i class="fas fa-university"></i>
+                        </div>
                         <div class="t-card">
                             <div class="t-title">Chaing mai University</div>
                             <div class="t-meta">University</div>
-                            <div>2024-Now</div>
+                            <div class="t-year">2024-Now</div>
+                            <div class="t-description">Study programming and develop advanced skills</div>
                         </div>
                     </div>
                 </div>
@@ -100,57 +254,119 @@
         <!-- ===== PROJECTS ===== -->
         <section id="projects" class="section">
             <div class="wrap">
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-project-diagram"></i>
+                        Projects
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
                 <div class="projects-hero">
-                    <h2>Project</h2>
                     <div class="marquee">
+                        <div class="marquee-track">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Mobile Apps</span>
+                            <span class="tag">Data Science</span>
+                            <span class="tag">UI/UX Design</span>
+                            <span class="tag">Robotics</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="projects-grid">
-                    <article class="card">
+                    <article class="card" data-aos="zoom-in">
                         <div class="thumb" style="background-image:url('img/CMRG.jpg');"></div>
                         <div class="grad"></div>
+                        <div class="card-overlay">
+                            <div class="card-icons">
+                                <i class="fas fa-robot"></i>
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                        </div>
                         <div class="meta">
                             <div>
                                 <strong>Chaing mai Robotic Games</strong>
                                 <div class="desc">Microbit programing</div>
                             </div>
-                            <a class="btn" href="#">Details</a>
+                            <a class="btn btn-view" href="#">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </a>
                         </div>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="thumb" style="background-image:url('img/OF.jpg');"></div>
                         <div class="grad"></div>
+                        <div class="card-overlay">
+                            <div class="card-icons">
+                                <i class="fas fa-mobile-alt"></i>
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                        </div>
                         <div class="meta">
                             <div>
                                 <strong>Only Food</strong>
                                 <div class="desc">Delivery Application</div>
                             </div>
-                            <a class="btn" href="#">Details</a>
+                            <a class="btn btn-view" href="#">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </a>
                         </div>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="thumb" style="background-image:url('img/Sang.PNG');"></div>
                         <div class="grad"></div>
+                        <div class="card-overlay">
+                            <div class="card-icons">
+                                <i class="fas fa-shoe-prints"></i>
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
                         <div class="meta">
                             <div>
                                 <strong>Sang Som</strong>
                                 <div class="desc">Sneaker Website</div>
                             </div>
-                            <a class="btn" href="#">Details</a>
+                            <a class="btn btn-view" href="#">
+                                <i class="fas fa-eye"></i>
+                                View
+                            </a>
                         </div>
                     </article>
+
                 </div>
 
                 <!-- Modal HTML -->
                 <div id="modal" class="modal">
                     <div class="modal-content">
-                        <span id="close" class="close">&times;</span>
-                        <h2 id="modal-title"></h2>
-                        <p id="modal-desc"></p>
-                        <div id="modal-images" class="modal-images"></div>
+                        <span id="close" class="close">
+                            <i class="fas fa-times"></i>
+                        </span>
+                        <div class="modal-header">
+                            <h2 id="modal-title"></h2>
+                            <p id="modal-desc"></p>
+                        </div>
+                        <div id="modal-images" class="modal-images">
+                            <div class="modal-nav">
+                                <button class="modal-nav-btn prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="modal-nav-btn next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="modal-indicators"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="modal-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,19 +375,79 @@
         <!-- ===== SKILLS ===== -->
         <section id="skills" class="section">
             <div class="wrap">
-                <h2>Skills</h2>
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-chart-bar"></i>
+                        Skills
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
                 <div class="skills">
-                    <div>HTML <small style="color:var(--muted)">/ Website</small>
-                        <div class="bar" style="--v: 70%"><i></i></div>
+                    <div class="skill-item" data-aos="fade-up">
+                        <div class="skill-header">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                            <small>/ Website</small>
+                        </div>
+                        <div class="bar" data-percent="70">
+                            <div class="bar-fill"></div>
+                            <span class="bar-text">70%</span>
+                        </div>
                     </div>
-                    <div>CSS <small style="color:var(--muted)">/ Style</small>
-                        <div class="bar" style="--v: 90%"><i></i></div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-header">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                            <small>/ Style</small>
+                        </div>
+                        <div class="bar" data-percent="90">
+                            <div class="bar-fill"></div>
+                            <span class="bar-text">90%</span>
+                        </div>
                     </div>
-                    <div>Design <small style="color:var(--muted)">/ UX/UI</small>
-                        <div class="bar" style="--v: 85%"><i></i></div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-header">
+                            <i class="fas fa-palette"></i>
+                            <span>Design</span>
+                            <small>/ UX/UI</small>
+                        </div>
+                        <div class="bar" data-percent="85">
+                            <div class="bar-fill"></div>
+                            <span class="bar-text">85%</span>
+                        </div>
                     </div>
-                    <div>Git <small style="color:var(--muted)">/ Teamwork</small>
-                        <div class="bar" style="--v: 75%"><i></i></div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-header">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                            <small>/ Teamwork</small>
+                        </div>
+                        <div class="bar" data-percent="75">
+                            <div class="bar-fill"></div>
+                            <span class="bar-text">75%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-header">
+                            <i class="fab fa-android"></i>
+                            <span>Kotlin</span>
+                            <small>/ Android</small>
+                        </div>
+                        <div class="bar" data-percent="80">
+                            <div class="bar-fill"></div>
+                            <span class="bar-text">80%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-header">
+                            <i class="fas fa-leaf"></i>
+                            <span>Spring boot</span>
+                            <small>/ Java Application</small>
+                        </div>
+                        <div class="bar" data-percent="77">
+                            <div class="bar-fill"></div>
+                            <span class="bar-text">77%</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -180,16 +456,37 @@
         <!-- ===== CONTACT ===== -->
         <section id="contact" class="section">
             <div class="wrap">
-                <h2>Contact</h2>
+                <div class="section-header">
+                    <h2>
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
                 <div class="contact">
-                    <div class="pane">
-                        <h3>Contact Me</h3>
-                        <p>Email : <a href="Yasatsawin_P@cmu.ac.th">Yasatsawin_P@cmu.ac.th</a><br />
-                            Tel: 083-6199448<br />
-                            Instagram: <a href="https://www.instagram.com/yssw.n1ght_/">yssw.n1ght_</a></p>
+                    <div class="pane contact-info">
+                        <h3>
+                            <i class="fas fa-address-card"></i>
+                            Contact Me
+                        </h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:Yasatsawin_P@cmu.ac.th">Yasatsawin_P@cmu.ac.th</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:083-6199448">083-6199448</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/yssw.n1ght_/" target="_blank">yssw.n1ght_</a>
+                        </div>
                     </div>
-                    <div class="pane">
-                        <h3>Address</h3>
+                    <div class="pane address-info">
+                        <h3>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Address
+                        </h3>
                         <p>221B Baker street , London , England</p>
                     </div>
                 </div>
@@ -198,9 +495,16 @@
     </main>
 
     <footer>
-        © <span id="y">2025</span> Yasatsawin Panyawai 672110242
+        <div class="footer-text">
+            © <span id="y">2025</span> Yasatsawin Panyawai 672110242
+        </div>
+
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="NicetyJS.js"></script>
 </body>
