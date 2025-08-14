@@ -13,6 +13,91 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA; /* Soft off-white */
+            color: #1a202c; /* Dark charcoal */
+        }
+
+        /* Cursor Follow Effect */
+        #cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            background: rgba(79, 209, 197, 0.2); /* Soft teal accent */
+            border-radius: 50%;
+            filter: blur(100px);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: transform 0.1s ease-out;
+            z-index: -1;
+        }
+        
+        /* Animation for elements scrolling into view */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Respects user's preference for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, #cursor-glow {
+                transition: none;
+                animation: none;
+            }
+            .group:hover .group-hover\:scale-105 {
+                transform: none;
+            }
+        }
+
+        /* Project card hover effect */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        /* Interactive Photo Styling */
+        .photo-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+        }
+        .photo-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            transition: transform 0.3s ease-out;
+            background-size: cover;
+            background-position: center;
+        }
+        .photo-color {
+            z-index: 2;
+        }
+        .photo-bg {
+            z-index: 1;
+            transform: scale(1.05);
+            filter: grayscale(100%) contrast(1.2);
+            opacity: 0.5;
+        }
+        
+    </style>
+
 </head>
 <body>
     <!-- Cursor Follow Effect Element -->
