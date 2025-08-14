@@ -112,8 +112,9 @@ export default function About() {
                     transition={{ delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    I'm a passionate frontend developer who cares about fundamentals — clean architecture, 
-                    intuitive user experiences, and accessibility. Currently leveling up in modern JavaScript frameworks and UI/UX design.
+                    I'm a passionate project manager who focuses on fundamentals — clear communication,
+                    strategic planning, and efficient team coordination. Currently leveling up in agile methodologies
+                    and cross-functional leadership to deliver projects that are both impactful and on time.
                   </motion.p>
                 </div>
               </div>

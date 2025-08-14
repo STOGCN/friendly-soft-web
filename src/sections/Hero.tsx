@@ -86,7 +86,7 @@ export default function Hero() {
           >
             <BadgeCheck className="size-4 text-green-600 dark:text-green-400" />
           </motion.div>
-                             <span className="text-xs text-gray-700 dark:text-white/80">Passionate Developer • Always Learning</span>
+                             <span className="text-xs text-gray-700 dark:text-white/80">Passionate Leader • Always Learning</span>
         </motion.div>
 
                          {/* Name Section */}

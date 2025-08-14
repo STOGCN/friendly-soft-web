@@ -1,7 +1,7 @@
 export const PROFILE = {
   name: "Ratchanon Katsakoon",
-  role: "Frontend Developer",
-  tagline: "Passionate Developer • Always Learning",
+  role: "Project Manager",
+  tagline: "Passionate Leader • Always Learning",
   location: "Chiang Mai, Thailand",
   email: "ratchanon_kat@cmu.ac.th",
   socials: {
