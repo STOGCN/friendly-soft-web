@@ -907,6 +907,11 @@ footer::before {
     
     .hero-title {
         font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    white-space: nowrap;
+    border-right: 0.15em solid #000; /* เคอร์เซอร์ */
+    overflow: hidden;
     }
     
     .hero-subtitle {

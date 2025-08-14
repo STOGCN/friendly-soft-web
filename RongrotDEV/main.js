@@ -12,6 +12,8 @@ class Portfolio {
         this.setupSmoothScrolling();
         this.setupActiveNavLinks();
         this.setupContactForm();
+            this.setupHeroTitleAnimation(); // <-- เพิ่มตรงนี้
+
     }
 
     // Navbar scroll effects
@@ -141,6 +143,42 @@ class Portfolio {
             skillsObserver.observe(bar);
         });
     }
+
+
+    setupHeroTitleAnimation() {
+    // Typewriter animation for hero title
+const heroTitle = document.querySelector('.hero-title');
+const messages = ["Welcome to my profile", "I'm Rongrot Butkaeo"];
+let msgIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let speed = 150;
+
+function typeHero() {
+    const currentMessage = messages[msgIndex];
+    heroTitle.textContent = currentMessage.substring(0, charIndex);
+
+    if (!isDeleting && charIndex < currentMessage.length) {
+        charIndex++;
+        speed = 150;
+    } else if (!isDeleting && charIndex === currentMessage.length) {
+        isDeleting = true;
+        speed = 1000; // รอ 1 วินาที ก่อนลบ
+    } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        speed = 50; // ความเร็วลบ
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        msgIndex = (msgIndex + 1) % messages.length; // เปลี่ยนข้อความต่อไป
+        speed = 500; // รอครึ่งวินาทีก่อนพิมพ์ข้อความใหม่
+    }
+
+    setTimeout(typeHero, speed);
+}
+
+typeHero();
+
+}
 
     // Smooth scrolling
     setupSmoothScrolling() {
