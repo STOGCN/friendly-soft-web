@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tanakorn Kanoup Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Fredoka One', cursive;
+    margin: 0;
+    background: linear-gradient(to bottom, #ffe6f0, #e6f0ff);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  header {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+  }
+
+  header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px; 
+    border: 4px solid white;
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.7);
+    animation: float 3s ease-in-out infinite;
+    object-fit: cover; 
+  }
+
+
+  header h1 {
+    margin-top: 15px;
+    font-size: 2.5rem;
+    color: #ff5c8a;
+    text-shadow: 1px 1px white;
+  }
+
+  header p {
+    color: #666;
+    font-size: 1.2rem;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  h2 {
+    color: #ff5c8a;
+    margin-top: 0;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill {
+    background: #ffd6e8;
+    color: #ff5c8a;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+
+  .skill:hover {
+    background: #ff5c8a;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .skill-bar {
+    margin-bottom: 15px;
+  }
+
+  .skill-bar span {
+    font-weight: bold;
+    color: #ff5c8a;
+  }
+
+  .bar {
+    position: relative;
+    background: #ffd6e8;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 18px;
+    margin-top: 5px;
+  }
+
+  .progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff5c8a, #ff99b9);
+    width: 0;
+    border-radius: 10px;
+    transition: width 1.5s ease-out;
+  }
+
+  .percent-text {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+    position: relative;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+  /* Fade Up */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Cat petals */
+  .cat {
+    position: fixed;
+    top: -50px;
+    animation: fall linear infinite;
+    opacity: 0.8;
+    width: 200px;
+    height: auto;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+  }
+
+  .nyan-cat-wrapper {
+    position: relative;
+    width: 100%;
+    height: 120px; 
+    overflow: hidden;
+  }
+
+  .nyan-cat {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -200px; 
+    width: 150px;
+    height: auto;
+    animation: nyan-move 8s linear infinite;
+  }
+
+  @keyframes nyan-move {
+    0% { left: -200px; }
+    100% { left: 100%; }
+  }
+
+</style>
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const skillBars = document.querySelectorAll(".skill-bar");
+
+    skillBars.forEach(bar => {
+      const percent = bar.getAttribute("data-percent");
+      const progress = bar.querySelector(".progress");
+      const percentText = bar.querySelector(".percent-text");
+
+      // แอนิเมชันหลอด
+      setTimeout(() => {
+        progress.style.width = percent + "%";
+      }, 200);
+
+      // แอนิเมชันตัวเลข
+      let current = 0;
+      const timer = setInterval(() => {
+        if (current >= percent) {
+          clearInterval(timer);
+        } else {
+          current++;
+          percentText.textContent = current + "%";
+        }
+      }, 15); // ยิ่งเลขนี้น้อย ตัวเลขจะวิ่งเร็วขึ้น
+    });
+  });
+</script>
+
+<body>
+
+<!-- Sakura petals -->
+<img src="./img/Cat1.png" class="cat" style="left:5%; animation-duration:10s;">
+<img src="./img/Cat2.png" class="cat" style="left:20%; animation-duration:12s;">
+<img src="./img/Cat3.png" class="cat" style="left:70%; animation-duration:15s;">
+<img src="./img/Cat4.webp" class="cat" style="left:85%; animation-duration:9s;">
+
+<header>
+  <img src="./img/Copy.jpg" alt="Profile Picture">
+  <h1>Tanakorn Kanoup</h1>
+  <p>CTO</p>
+</header>
+
+<section>
+  <div class="card">
+    <h2>About Me</h2>
+    <p><strong>Firstname & Lastname:</strong> Tanakorn Kanoup</p>
+    <p><strong>Nickname:</strong> Copy</p>
+    <p><strong>Birthday:</strong> 5 Semtember 2005</p>
+    <p><strong>Age:</strong> 19 years old</p>
+    <p><strong>Hobbies:</strong> Listen the music, Play the game, Watch the anime</p>
+  </div>
+
+  <div class="card">
+    <h2>Education</h2>
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+      <img src="./img/Yupparaj.png" alt="Middle School" style="width:80px; height:80px; border-radius: 10px;">
+      <div>
+        <p>Yupparaj Wittayalai (2018-2021)</p>
+        <p>ห้องเรียนพิเศษวิทยาศาสตร์-คณิตศาสาตร์</p>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+      <img src="./img/Yupparaj.png" alt="High School" style="width:80px; height:80px; border-radius: 10px;">
+      <div>
+        <p>Yupparaj Wittayalai (2021-2024)</p>
+        <p>ห้องเรียนพสวท.สู่ความเป็นเลิศ</p>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <img src="./img/ChiangMaiUniversity.png" style="width:80px; height:80px; border-radius: 10px;">
+      <div>
+        <p>Chiang Mai University (2024-Current)</p>
+        <p>สาขาวิชาบูรณาการอุตสาหกรรมดิจิทัล</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+  <h2>Experiences</h2>
+
+  <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+    <img src="./img/Autonomous Driving Robotic.png" alt="Autonomous Driving Robotic" style="width:80px; height:80px; border-radius:10px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+    <div>
+      <p><strong>Autonomous Driving Robotic</strong></p>
+      <p>การอบรมเชิงปฏิบัติการค่ายเสริมทักษะและเขียนโปรแกรมควบคุมหุ่นยนต์</p>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+    <img src="./img/National Computer Project Competition.png" alt="Web Development" style="width:80px; height:80px; border-radius:10px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+    <div>
+      <p><strong>Web Development Projects</strong></p>
+      <p><strong>รางวัล เหรียญทอง</strong>  สร้างเว็บไซต์สำหรับการนำทางผู้เยี่ยมชม ให้ไปยังจุดหมายที่ต้องการ</p>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 15px;">
+    <img src="./img/School-level Computer Project Competition.png" alt="Anime & Game Illustration" style="width:80px; height:80px; border-radius:10px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+    <div>
+      <p><strong>School-level Computer Project Competition</strong></p>
+      <p><strong>รางวัล รองชนะเลิศอันดับ 1</strong>  สร้างเว็บไซต์สำหรับการนำทางผู้เยี่ยมชม ให้ไปยังจุดหมายที่ต้องการ</p>
+    </div>
+  </div>
+</div>
+
+  <div class="card">
+    <h2>Skills</h2>
+
+    <div class="skill-bar" data-percent="75">
+      <span>Java</span>
+      <div class="bar">
+        <div class="progress"></div>
+        <span class="percent-text">0%</span>
+      </div>
+    </div>
+
+    <div class="skill-bar" data-percent="70">
+      <span>HTML</span>
+      <div class="bar">
+        <div class="progress"></div>
+        <span class="percent-text">0%</span>
+      </div>
+    </div>
+
+    <div class="skill-bar" data-percent="65">
+      <span>JavaScript</span>
+      <div class="bar">
+        <div class="progress"></div>
+        <span class="percent-text">0%</span>
+      </div>
+    </div>
+
+    <div class="skill-bar" data-percent="75">
+      <span>CSS</span>
+      <div class="bar">
+        <div class="progress"></div>
+        <span class="percent-text">0%</span>
+      </div>
+    </div>
+
+    <div class="skill-bar" data-percent="70">
+      <span>Node.js</span>
+      <div class="bar">
+        <div class="progress"></div>
+        <span class="percent-text">0%</span>
+      </div>
+    </div>
+
+    <div class="skill-bar" data-percent="85">
+      <span>SQL</span>
+      <div class="bar">
+        <div class="progress"></div>
+        <span class="percent-text">0%</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Email: tanakorngo63@gmail.com</p>
+    <p>Facebook: Thanakorn kan-oop</p>
+    <p>Instagram: @thanakorn_48</p>
+  </div>
+</section>
+
+<div class="nyan-cat-wrapper">
+  <img src="./img/nyancat.webp" alt="Nyan Cat" class="nyan-cat">
+</div>
+
+<footer>
+  © 2025 Tanakorn-kanoup 🌸 All rights reserved.
+</footer>
+
+</body>
+</html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanakorn Kanoup - Profile</title>
+    <link rel="stylesheet" href="../../tailwind.css">
+    
+</html>
+
