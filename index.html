@@ -11,365 +11,462 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#A2D2FF',    /* ฟ้าอ่อน */
-                        'secondary': '#CDB4DB',  /* ชมพูม่วงพาสเทล */
-                        'accent': '#FFE5B4',     /* เหลืองนวล */
-                        'surface': '#FFFFFF',    /* พื้นหลังการ์ด */
-                        'text': '#4A4A4A',       /* ข้อความเทาเข้มอ่านง่าย */
-                        'bg-custom': '#FDF6F0'   /* ครีมพาสเทล */
+                        'primary': '#8b5cf6',    /* Purple */
+                        'secondary': '#a78bfa',  /* Light Purple */
+                        'accent': '#7c3aed',     /* Dark Purple */
+                        'surface': '#1a2332',    /* Dark Blue */
+                        'text': '#ffffff',       /* White */
+                        'bg-custom': '#0b0d10'   /* Dark Background */
                     }
                 }
             }
         }
     </script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FDF6F0;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .fade-in-delay {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards 0.3s;
-        }
-
-        .fade-in-delay-2 {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards 0.6s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(162, 210, 255, 0.3);
-        }
-
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .scroll-animate.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-animate {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-animate.animate-left {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .nav-scrolled {
-            background-color: #CDB4DB;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .nav-scrolled .nav-link {
-            color: #FFFFFF;
-        }
-
-        .nav-scrolled .nav-brand {
-            color: #FFFFFF;
-        }
-
-        .nav-start {
-            background-color: #A2D2FF;
-        }
-
-        .nav-start .nav-link {
-            color: #4A4A4A;
-        }
-
-        .nav-start .nav-brand {
-            color: #4A4A4A;
-        }
-
-        .nav-brand img {
-            height: 60px;
-            width: auto;
-        }
-
-        /* ปุ่ม */
-        button,
-        .bg-accent {
-            background-color: #FFE5B4;
-            color: #4A4A4A;
-        }
-
-        button:hover,
-        .bg-accent:hover {
-            background-color: #A2D2FF;
-            color: #fff;
-        }
-
-        /* ฟอร์ม focus effect */
-        input:focus,
-        textarea:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(162, 210, 255, 0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="contact-handler.js" defer></script>
 </head>
 
 <link rel="icon" type="image/png" href="LOGO.PNG">
 <link rel="apple-touch-icon" href="LOGO.PNG">
 <title>NovaSoft Solutions</title>
 
-<body class="bg-bg-custom text-text smooth-scroll">
+<body class="smooth-scroll">
+
+    <!-- Animated Background -->
+    <div class="background"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Moving Grid -->
+    <div class="moving-grid"></div>
+    
+    <!-- Animated Lines -->
+    <div class="animated-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
 
     <!-- Navigation -->
-    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 nav-start">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-3 nav-brand">
-                    <img src="LOGO.PNG" alt="NovaSoft Logo" class="h-12 w-12 object-contain">
-                    <span class="font-bold text-xl">NovaSoft Solutions</span>
+    <nav class="navbar" id="navbar">
+        <div class="navbar-content">
+            <a href="#home" class="navbar-brand">
+                <img src="LOGO.PNG" alt="NovaSoft Logo" class="navbar-logo">
+                <span class="navbar-title">NovaSoft Solutions</span>
+            </a>
+            
+            <ul class="navbar-menu" id="navbar-menu">
+                <li><a href="#home" class="navbar-link">Home</a></li>
+                <li><a href="#awards" class="navbar-link">Awards</a></li>
+                <li><a href="#team" class="navbar-link">Team</a></li>
+                <li><a href="#contact" class="navbar-link">Contact</a></li>
+            </ul>
+            
+            <div class="theme-toggle" id="theme-toggle">
+                <div class="toggle-icon">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/>
+                    </svg>
                 </div>
+            </div>
+            
+            <div class="navbar-toggle" id="navbar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Section 1: Hero -->
-
-
-    <!-- Section 2: Awards & Achievements -->
-    <section id="awards" class="py-20 px-4 bg-surface">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Awards & Achievements</h2>
-                <p class="text-xl text-gray-600">Milestones that shaped our journey</p>
-            </div>
-
-            <div class="relative border-l-4 border-primary pl-8 space-y-12">
-                <div class="relative">
-                    <span class="inline-block bg-primary text-white rounded-full p-2">
-                        🏆
-                    </span>
-                    <h3 class="text-xl font-semibold">Global Innovation Award <span class="text-secondary">(2025)</span>
-                    </h3>
-                    <p class="text-gray-600">Honored for developing impactful digital solutions that drive positive
-                        change worldwide.</p>
-                </div>
-                <div class="relative">
-                    <span class="inline-block bg-primary text-white rounded-full p-2">
-                        🌱
-                    </span>
-                    <h3 class="text-xl font-semibold">Sustainable Tech Excellence <span
-                            class="text-secondary">(2024)</span></h3>
-                    <p class="text-gray-600">Recognized for creating technology that reduces carbon footprint and
-                        promotes sustainability.</p>
-                </div>
-                <div class="relative">
-                    <span class="inline-block bg-primary text-white rounded-full p-2">
-                        🎨
-                    </span>
-                    <h3 class="text-xl font-semibold">Best User Experience Platform <span
-                            class="text-secondary">(2024)</span></h3>
-                    <p class="text-gray-600">Voted highest by global users for delivering an intuitive and user-friendly
-                        experience.</p>
-                </div>
-                <div class="relative">
-                    <span class="inline-block bg-primary text-white rounded-full p-2">
-                        🚀
-                    </span>
-                    <h3 class="text-xl font-semibold">Top 10 Fastest Growing Startups <span
-                            class="text-secondary">(2023)</span></h3>
-                    <p class="text-gray-600">Achieved 350% business growth within a year, earning a spot among the
-                        fastest-growing startups.</p>
-                </div>
-                <div class="relative">
-                    <span class="inline-block bg-primary text-white rounded-full p-2">
-                        🤖
-                    </span>
-                    <h3 class="text-xl font-semibold">AI Excellence Recognition <span
-                            class="text-secondary">(2023)</span></h3>
-                    <p class="text-gray-600">Acknowledged for groundbreaking AI innovations transforming enterprise
-                        operations.</p>
-                </div>
-                <div class="relative">
-                    <span class="inline-block bg-primary text-white rounded-full p-2">
-                        💖
-                    </span>
-                    <h3 class="text-xl font-semibold">Customer Delight Award <span class="text-secondary">(2022)</span>
-                    </h3>
-                    <p class="text-gray-600">Ranked highest in customer satisfaction within the digital solutions
-                        industry.</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Section 1: Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">NovaSoft Solutions</h1>
+                <p class="hero-subtitle">Digital innovation that drives business success</p>
+                <div class="hero-buttons">
+                    <a href="#team" class="btn btn-primary">View Team</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section 3: Experience -->
+        <!-- Section 2: Awards & Achievements -->
+        <section id="awards" class="section">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="section-title">Awards & Achievements</h2>
+                <p class="section-subtitle">Milestones that shaped our journey</p>
 
-    <!-- Section 4: Team -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card scroll-animate">
+                        <div class="flex items-center mb-6">
+                            <span class="text-4xl mr-4">🏆</span>
+                            <h3 class="text-xl font-semibold text-white">Global Innovation Award</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Honored for developing impactful digital solutions that drive positive change worldwide.</p>
+                        <span class="text-sm text-primary font-medium">2025</span>
+                    </div>
 
-    <section id="team" class="py-20 px-4 bg-bg-custom">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Our Team</h2>
-                <p class="text-xl text-gray-700">Passionate professionals driving innovation and excellence</p>
+                    <div class="card scroll-animate">
+                        <div class="flex items-center mb-6">
+                            <span class="text-4xl mr-4">🌱</span>
+                            <h3 class="text-xl font-semibold text-white">Sustainable Tech Excellence</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Recognized for creating technology that reduces carbon footprint and promotes sustainability.</p>
+                        <span class="text-sm text-primary font-medium">2024</span>
+                    </div>
+
+                    <div class="card scroll-animate">
+                        <div class="flex items-center mb-6">
+                            <span class="text-4xl mr-4">🎨</span>
+                            <h3 class="text-xl font-semibold text-white">Best User Experience Platform</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Voted highest by global users for delivering an intuitive and user-friendly experience.</p>
+                        <span class="text-sm text-primary font-medium">2024</span>
+                    </div>
+
+                    <div class="card scroll-animate">
+                        <div class="flex items-center mb-6">
+                            <span class="text-4xl mr-4">🚀</span>
+                            <h3 class="text-xl font-semibold text-white">Top 10 Fastest Growing Startups</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Achieved 350% business growth within a year, earning a spot among the fastest-growing startups.</p>
+                        <span class="text-sm text-primary font-medium">2023</span>
+                    </div>
+
+                    <div class="card scroll-animate">
+                        <div class="flex items-center mb-6">
+                            <span class="text-4xl mr-4">🤖</span>
+                            <h3 class="text-xl font-semibold text-white">AI Excellence Recognition</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Acknowledged for groundbreaking AI innovations transforming enterprise operations.</p>
+                        <span class="text-sm text-primary font-medium">2023</span>
+                    </div>
+
+                    <div class="card scroll-animate">
+                        <div class="flex items-center mb-6">
+                            <span class="text-4xl mr-4">💖</span>
+                            <h3 class="text-xl font-semibold text-white">Customer Delight Award</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">Ranked highest in customer satisfaction within the digital solutions industry.</p>
+                        <span class="text-sm text-primary font-medium">2022</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- Horizontal Scroll Wrapper -->
-            <div class="flex space-x-6 overflow-x-auto scrollbar-hide py-4">
+        <!-- Section 3: Team -->
+        <section id="team" class="section">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-subtitle">Passionate professionals driving innovation and excellence</p>
 
-                <!-- Card 1 -->
-                <div
-                    class="min-w-[280px] flex-shrink-0 rounded-xl shadow-lg bg-gradient-to-br from-primary to-secondary transform hover:scale-105 transition p-6 text-center">
-                    <img src="./STOGCN/img/Screenshot 2024-10-03 192355.png" alt="Profile" class="w-24 h-24 object-cover rounded-full border-2 border-black mx-auto">
-                    <h3 class="text-xl font-semibold mt-4 text-black">Tanannat Phuksakulwong</h3>
-                    <p class="text-sm text-black">672110141</p>
-                    <p class="text-black font-medium mt-2">CEO & Founder</p>
-                    <p class="text-black/80 text-sm mt-2">Visionary leader driving digital transformation and business
-                        strategy</p>
-                    <a href="./STOGCN/STOGNProfile.html" target="_blank"
-                        class="mt-4 inline-block bg-accent text-black px-4 py-2 rounded-lg hover:bg-white transition">View
-                        Portfolio</a>
+                <div class="team-grid">
+                    <!-- Card 1 -->
+                    <div class="team-card scroll-animate">
+                        <div class="flex-1">
+                            <img src="./STOGCN/img/Screenshot 2024-10-03 192355.png" alt="Tanannat Phuksakulwong" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Tanannat Phuksakulwong</h3>
+                            <p class="text-sm text-gray-300 mb-3">672110141</p>
+                            <p class="text-primary font-medium mt-2 mb-3">CEO & Founder</p>
+                            <p class="text-gray-300 text-sm leading-relaxed">Visionary leader driving digital transformation and business strategy</p>
+                        </div>
+                        <a href="./STOGCN/STOGNProfile.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="team-card scroll-animate">
+                        <div class="flex-1">
+                            <img src="./o-OPTIMISTIC-o/img/Copy.jpg" alt="Tanakorn Kanoup" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Tanakorn Kanoup</h3>
+                            <p class="text-sm text-gray-300 mb-3">672110142</p>
+                            <p class="text-primary font-medium mt-2 mb-3">CTO</p>
+                            <p class="text-gray-300 text-sm leading-relaxed">Leading technical innovation with full-stack and AI expertise</p>
+                        </div>
+                        <a href="./o-OPTIMISTIC-o/Tanakorn.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="team-card scroll-animate">
+                        <div class="flex-1">
+                            <img src="/RongrotDEV/Photos/profile.jpg" alt="Rongrot Butkaeo" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Rongrot Butkaeo</h3>
+                            <p class="text-sm text-gray-300 mb-3">672110158</p>
+                            <p class="text-primary font-medium mt-2 mb-3">Head of Design</p>
+                            <p class="text-gray-300 text-sm leading-relaxed">Crafting intuitive UX/UI and ensuring excellent user experiences</p>
+                        </div>
+                        <a href="RongrotDEV/Rong.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="team-card scroll-animate">
+                        <div class="flex-1">
+                            <img src="../your-image.jpg" alt="Wutthikan Suksaen" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Wutthikan Suksaen</h3>
+                            <p class="text-sm text-gray-300 mb-3">672110160</p>
+                            <p class="text-primary font-medium mt-2 mb-3">Marketing Director</p>
+                            <p class="text-gray-300 text-sm leading-relaxed">Driving brand growth and managing strategic marketing campaigns</p>
+                        </div>
+                        <a href="./profiles/Wutthikan/Wutthikan.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="team-card scroll-animate">
+                        <div class="flex-1">
+                            <img src="Nicety17/img/Nicety.JPG" alt="Yasatsawin Panyawai" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Yasatsawin Panyawai</h3>
+                            <p class="text-sm text-gray-300 mb-3">672110242</p>
+                            <p class="text-primary font-medium mt-2 mb-3">Data Scientist</p>
+                            <p class="text-gray-300 text-sm leading-relaxed">Transforming complex data into actionable insights for the team</p>
+                        </div>
+                        <a href="Nicety17/NicetyProfile.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="team-card scroll-animate">
+                        <div class="flex-1">
+                            <img src="DotaXXXX/public/avatar.jpg" alt="Ratchanon Katsakoon" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Ratchanon Katsakoon</h3>
+                            <p class="text-sm text-gray-300 mb-3">672110243</p>
+                            <p class="text-primary font-medium mt-2 mb-3">Project Manager</p>
+                            <p class="text-gray-300 text-sm leading-relaxed">Ensuring smooth project delivery with agile methodology</p>
+                        </div>
+                        <a href="http://localhost:4173" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                    </div>
                 </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="min-w-[280px] flex-shrink-0 rounded-xl shadow-lg bg-gradient-to-br from-secondary to-accent transform hover:scale-105 transition p-6 text-center">
-                    <img src="./o-OPTIMISTIC-o/img/Copy.jpg" alt="Profile"
-                        class="w-24 h-24 object-cover rounded-full border-2 border-black mx-auto">
-                    <h3 class="text-xl font-semibold mt-4 text-black">Tanakorn Kanoup</h3>
-                    <p class="text-sm text-black">672110142</p>
-                    <p class="text-black font-medium mt-2">CTO</p>
-                    <p class="text-black/80 text-sm mt-2">Leading technical innovation with full-stack and AI expertise
-                    </p>
-                    <a href="./o-OPTIMISTIC-o/Tanakorn.html" target="_blank"
-                        class="mt-4 inline-block bg-accent text-black px-4 py-2 rounded-lg hover:bg-white transition">View
-                        Portfolio</a>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="min-w-[280px] flex-shrink-0 rounded-xl shadow-lg bg-gradient-to-br from-accent to-primary transform hover:scale-105 transition p-6 text-center">
-                    <img src="/RongrotDEV/Photos/profile.jpg" alt="Profile"
-                        class="w-24 h-24 object-cover rounded-full border-2 border-black mx-auto">
-                    <h3 class="text-xl font-semibold mt-4 text-black">Rongrot Butkaeo</h3>
-                    <p class="text-sm text-black">672110158</p>
-                    <p class="text-black font-medium mt-2">Head of Design</p>
-                    <p class="text-black/80 text-sm mt-2">Crafting intuitive UX/UI and ensuring excellent user
-                        experiences</p>
-                    <a href="RongrotDEV/Rong.html" target="_blank"
-                        class="mt-4 inline-block bg-accent text-black px-4 py-2 rounded-lg hover:bg-white transition">View
-                        Portfolio</a>
-                </div>
-
-                <!-- Card 4 -->
-                <div
-                    class="min-w-[280px] flex-shrink-0 rounded-xl shadow-lg bg-gradient-to-br from-primary to-secondary transform hover:scale-105 transition p-6 text-center">
-                    <img src="../your-image.jpg" alt="Profile"
-                        class="w-24 h-24 object-cover rounded-full border-2 border-black mx-auto">
-                    <h3 class="text-xl font-semibold mt-4 text-black">Wutthikan Suksaen</h3>
-                    <p class="text-sm text-black">672110160</p>
-                    <p class="text-black font-medium mt-2">Marketing Director</p>
-                    <p class="text-black/80 text-sm mt-2">Driving brand growth and managing strategic marketing
-                        campaigns</p>
-                    <a href="./profiles/Wutthikan/Wutthikan.html" target="_blank"
-                        class="mt-4 inline-block bg-accent text-black px-4 py-2 rounded-lg hover:bg-white transition">View
-                        Portfolio</a>
-                </div>
-
-                <!-- Card 5 -->
-                <div
-                    class="min-w-[280px] flex-shrink-0 rounded-xl shadow-lg bg-gradient-to-br from-secondary to-accent transform hover:scale-105 transition p-6 text-center">
-                    <img src="Nicety17/img/Nicety.JPG" alt="Profile"
-                        class="w-24 h-24 object-cover rounded-full border-2 border-black mx-auto">
-                    <h3 class="text-xl font-semibold mt-4 text-black">Yasatsawin Panyawai</h3>
-                    <p class="text-sm text-black">672110242</p>
-                    <p class="text-black font-medium mt-2">Data Scientist</p>
-                    <p class="text-black/80 text-sm mt-2">Transforming complex data into actionable insights for the
-                        team</p>
-                    <a href="Nicety17/NicetyProfile.html" target="_blank"
-                        class="mt-4 inline-block bg-accent text-black px-4 py-2 rounded-lg hover:bg-white transition">View
-                        Portfolio</a>
-                </div>
-
-                <!-- Card 6 -->
-                <div
-                    class="min-w-[280px] flex-shrink-0 rounded-xl shadow-lg bg-gradient-to-br from-accent to-primary transform hover:scale-105 transition p-6 text-center">
-                    <img src="DotaXXXX/public/avatar.jpg" alt="Profile"
-                        class="w-24 h-24 object-cover rounded-full border-2 border-black mx-auto">
-                    <h3 class="text-xl font-semibold mt-4 text-black">Ratchanon Katsakoon</h3>
-                    <p class="text-sm text-black">672110243</p>
-                    <p class="text-black font-medium mt-2">Project Manager</p>
-                    <p class="text-black/80 text-sm mt-2">Ensuring smooth project delivery with agile methodology</p>
-                    <a href="http://localhost:4173" target="_blank"
-                        class="mt-4 inline-block bg-accent text-black px-4 py-2 rounded-lg hover:bg-white transition">View
-                        Portfolio</a>
-                </div>
-
             </div>
-        </div>
-    </section>
-    <!-- Section 5: Contact -->
+        </section>
 
-    <!-- Contact Info -->
+        <!-- Section 4: Contact -->
+        <section id="contact" class="section">
+            <div class="contact-container">
+                <div class="contact-card">
+                    <!-- Left Column - Contact Form -->
+                    <div class="form-column">
+                        <h2 class="form-title">Send us a message</h2>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="send-button">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Right Column - Contact Information -->
+                    <div class="info-column">
+                        <h2 class="info-title">Contact us</h2>
+                        <div class="title-underline"></div>
+                        <p class="info-description">We're open for any suggestion or just to have a chat</p>
+                        
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Address:</span>
+                                    <span class="value">Bangkok, Thailand</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Phone:</span>
+                                    <span class="value">+66 2 123 4567</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Email:</span>
+                                    <span class="value">NovaSoft@gmail.com</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Website:</span>
+                                    <span class="value">novasoft.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-text text-surface py-12 px-4">
+    <footer>
         <div class="max-w-7xl mx-auto text-center">
-            <div class="text-2xl font-bold mb-4">NovaSoft Solutions</div>
-            <p class="text-gray-300 mb-6">Transforming businesses through innovation</p>
-            <p class="text-gray-400 text-sm">&copy; 2024 NovaSoft Solutions. All rights reserved.</p>
+            <div class="text-3xl font-bold mb-4">NovaSoft Solutions</div>
+            <p class="text-gray-300 mb-6 text-lg">Transforming businesses through innovation</p>
+            <p class="text-gray-400">&copy; 2024 NovaSoft Solutions. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Navbar scroll
-        const mainNav = document.getElementById('main-nav');
-        const heroSection = document.getElementById('home');
-        const heroHeight = heroSection.offsetHeight;
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let cursorDotX = 0;
+        let cursorDotY = 0;
 
+        // Mouse move event
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Smooth cursor animation
+        function animateCursor() {
+            // Smooth lerp for main cursor
+            cursorX += (mouseX - cursorX) * 0.1;
+            cursorY += (mouseY - cursorY) * 0.1;
+            
+            // Faster lerp for dot
+            cursorDotX += (mouseX - cursorDotX) * 0.3;
+            cursorDotY += (mouseY - cursorDotY) * 0.3;
+            
+            cursor.style.transform = `translate(${cursorX - 10}px, ${cursorY - 10}px)`;
+            cursorDot.style.transform = `translate(${cursorDotX - 2}px, ${cursorDotY - 2}px)`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hover effects for clickable elements
+        const clickableElements = document.querySelectorAll('a, button, .card, .team-card, .navbar-link, .navbar-brand');
+        
+        clickableElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+
+        // Click ripple effect
+        document.addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.className = 'cursor-ripple';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            document.body.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+
+        // Navbar functionality
+        const navbar = document.getElementById('navbar');
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMenu = document.getElementById('navbar-menu');
+        const navbarLinks = document.querySelectorAll('.navbar-link');
+
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
-            if (window.scrollY > heroHeight - 80) {
-                mainNav.classList.add('nav-scrolled');
-                mainNav.classList.remove('nav-start');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
             } else {
-                mainNav.classList.remove('nav-scrolled');
-                mainNav.classList.add('nav-start');
+                navbar.classList.remove('scrolled');
             }
+        });
+
+        // Set active nav link based on current section
+        function setActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.navbar-link[href="#${sectionId}"]`);
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navbarLinks.forEach(link => link.classList.remove('active'));
+                    if (navLink) {
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // Mobile menu toggle
+        navbarToggle.addEventListener('click', () => {
+            navbarToggle.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarToggle.classList.remove('active');
+                navbarMenu.classList.remove('active');
+            });
         });
 
         // Smooth scroll for navigation links
@@ -378,18 +475,25 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
 
-        // Scroll animations (จากซ้ายไปขวา)
+        // Update active nav link on scroll
+        window.addEventListener('scroll', setActiveNavLink);
+
+        // Scroll animations
         function observeElements() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-left');
-                        observer.unobserve(entry.target); // stop observing after animation
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
@@ -402,29 +506,53 @@
             });
         }
 
-        // Horizontal auto scroll
-        function autoScrollHorizontal(containerId, speed = 1) {
-            const container = document.getElementById(containerId);
-            let scrollPos = 0;
+        // Form submission is now handled by contact-handler.js
+        // The old form submission code has been replaced with the new ContactFormHandler class
 
-            function scroll() {
-                scrollPos += speed;
-                if (scrollPos >= container.scrollWidth - container.clientWidth) {
-                    scrollPos = 0; // กลับไปเริ่ม
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Function to set theme
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            // Cursor colors are now handled by CSS with data-theme attribute
+            
+            // Update logo based on theme
+            const logo = document.querySelector('.navbar-logo');
+            if (logo) {
+                if (theme === 'light') {
+                    logo.src = 'LOGO1.PNG';
+                } else {
+                    logo.src = 'LOGO.PNG';
                 }
-                container.scrollLeft = scrollPos;
-                requestAnimationFrame(scroll);
             }
-
-            requestAnimationFrame(scroll);
         }
-
+        
+        // Check for saved theme preference or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        setTheme(savedTheme);
+        
+        // Theme toggle click handler
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            setTheme(newTheme);
+            
+            // Add animation class
+            themeToggle.classList.add('theme-changed');
+            setTimeout(() => {
+                themeToggle.classList.remove('theme-changed');
+            }, 300);
+        });
+        
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             observeElements();
-            autoScrollHorizontal('team-scroll', 0.5); // container id และความเร็ว
         });
-
     </script>
 </body>
 
