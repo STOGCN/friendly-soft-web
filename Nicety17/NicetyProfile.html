@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Yasatsawin</title>
+    <link rel="stylesheet" href="NicetyStyle.css" />
+</head>
+
+<body>
+    <!-- ===== NAV ===== -->
+    <div class="nav-wrap">
+        <nav class="nav">
+            <div class="brand">Yasatsawin Panyawai | Portfolio</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#projects">Project</a>
+                <a href="#skills">Skills</a>
+            </div>
+            <div class="nav-cta">
+                <a class="btn" href="#contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero section">
+        <div class="orb" aria-hidden="true"></div>
+        <div class="hero-card">
+            <div class="pfp">
+                <img src="img/Nicety.JPG" alt="Profile" />
+            </div>
+            <div class="hero-content">
+                <div class="eyebrow">PORTFOLIO</div>
+                <h1>Hi i'm <span style="white-space:nowrap;">Yasatsawin Panyawai</span><br />A Data Scientist</h1>
+                <p class="lead">A Data Scientist passionate about transforming complex data into actionable insights for
+                    the team.</p>
+                <div class="labels">
+                    <span class="chip">HTML/CSS</span>
+                    <span class="chip">Java Script</span>
+                    <span class="chip">Kotlin</span>
+                    <span class="chip">Spring boot</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="section">
+            <div class="wrap">
+                <h2>About</h2>
+                <p>Birth day : 08 October 2005 <br />
+                    I’m a passionate coder who loves turning ideas into clean, efficient, and functional code. I enjoy
+                    exploring new technologies, solving challenging problems, and continuously improving my skills to
+                    build projects that are both practical and elegant.
+
+                    When I’m not coding, I like to experiment with web design, learn about data, and discover creative
+                    ways to make digital experiences smoother and more enjoyable.</p>
+            </div>
+        </section>
+
+        <!-- ===== TIMELINE (โรงเรียน → มหาวิทยาลัย → ปัจจุบัน) ===== -->
+        <section id="timeline" class="section">
+            <div class="wrap">
+                <h2>Learning Journey & Timeline</h2>
+                <div class="timeline">
+                    <div class="t-item">
+                        <div class="t-dot"></div>
+                        <div class="t-card">
+                            <div class="t-title">Kowit tamrong School</div>
+                            <div class="t-meta">Primary education</div>
+                            <div>2010-2013</div>
+                        </div>
+                    </div>
+
+                    <div class="t-item">
+                        <div class="t-dot"></div>
+                        <div class="t-card">
+                            <div class="t-title">Rangsee vittaya School</div>
+                            <div class="t-meta">Secondary education</div>
+                            <div>2014-2023</div>
+                        </div>
+                    </div>
+
+                    <div class="t-item">
+                        <div class="t-dot"></div>
+                        <div class="t-card">
+                            <div class="t-title">Chaing mai University</div>
+                            <div class="t-meta">University</div>
+                            <div>2024-Now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="section">
+            <div class="wrap">
+                <div class="projects-hero">
+                    <h2>Project</h2>
+                    <div class="marquee">
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="card">
+                        <div class="thumb" style="background-image:url('img/CMRG.jpg');"></div>
+                        <div class="grad"></div>
+                        <div class="meta">
+                            <div>
+                                <strong>Chaing mai Robotic Games</strong>
+                                <div class="desc">Microbit programing</div>
+                            </div>
+                            <a class="btn" href="#">Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="thumb" style="background-image:url('img/OF.jpg');"></div>
+                        <div class="grad"></div>
+                        <div class="meta">
+                            <div>
+                                <strong>Only Food</strong>
+                                <div class="desc">Delivery Application</div>
+                            </div>
+                            <a class="btn" href="#">Details</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="thumb" style="background-image:url('img/Sang.PNG');"></div>
+                        <div class="grad"></div>
+                        <div class="meta">
+                            <div>
+                                <strong>Sang Som</strong>
+                                <div class="desc">Sneaker Website</div>
+                            </div>
+                            <a class="btn" href="#">Details</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Modal HTML -->
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <span id="close" class="close">&times;</span>
+                        <h2 id="modal-title"></h2>
+                        <p id="modal-desc"></p>
+                        <div id="modal-images" class="modal-images"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills" class="section">
+            <div class="wrap">
+                <h2>Skills</h2>
+                <div class="skills">
+                    <div>HTML <small style="color:var(--muted)">/ Website</small>
+                        <div class="bar" style="--v: 70%"><i></i></div>
+                    </div>
+                    <div>CSS <small style="color:var(--muted)">/ Style</small>
+                        <div class="bar" style="--v: 90%"><i></i></div>
+                    </div>
+                    <div>Design <small style="color:var(--muted)">/ UX/UI</small>
+                        <div class="bar" style="--v: 85%"><i></i></div>
+                    </div>
+                    <div>Git <small style="color:var(--muted)">/ Teamwork</small>
+                        <div class="bar" style="--v: 75%"><i></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section">
+            <div class="wrap">
+                <h2>Contact</h2>
+                <div class="contact">
+                    <div class="pane">
+                        <h3>Contact Me</h3>
+                        <p>Email : <a href="Yasatsawin_P@cmu.ac.th">Yasatsawin_P@cmu.ac.th</a><br />
+                            Tel: 083-6199448<br />
+                            Instagram: <a href="https://www.instagram.com/yssw.n1ght_/">yssw.n1ght_</a></p>
+                    </div>
+                    <div class="pane">
+                        <h3>Address</h3>
+                        <p>221B Baker street , London , England</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="y">2025</span> Yasatsawin Panyawai 672110242
+    </footer>
+
+
+    <script src="NicetyJS.js"></script>
+</body>
+
+</html>
