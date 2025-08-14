@@ -214,5 +214,74 @@
 
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursorGlow = document.getElementById('cursor-glow');
+            const photoColor = document.getElementById('photo-color');
+            const photoBg = document.getElementById('photo-bg');
+            const photoContainer = document.querySelector('.photo-container');
+
+            // 1. Cursor Follow Effect
+            // Only activate on non-touch devices
+            if (!window.matchMedia("(pointer: coarse)").matches) {
+                document.addEventListener('mousemove', (e) => {
+                    requestAnimationFrame(() => {
+                        cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+                    });
+                });
+            } else {
+                cursorGlow.style.display = 'none';
+            }
+
+
+            // 2. Interactive Photo Parallax Effect
+            if (photoContainer) {
+                photoContainer.addEventListener('mousemove', (e) => {
+                    const rect = photoContainer.getBoundingClientRect();
+                    // Calculate mouse position relative to the center of the element
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    // Define how much the layers should move
+                    const factorColor = 0.03;
+                    const factorBg = 0.06;
+
+                    requestAnimationFrame(() => {
+                        photoColor.style.transform = `translate(${x * factorColor}px, ${y * factorColor}px)`;
+                        // Move background in the opposite direction for parallax
+                        photoBg.style.transform = `scale(1.05) translate(${-x * factorBg}px, ${-y * factorBg}px)`;
+                    });
+                });
+
+                photoContainer.addEventListener('mouseleave', () => {
+                    requestAnimationFrame(() => {
+                        photoColor.style.transform = 'translate(0, 0)';
+                        photoBg.style.transform = 'scale(1.05) translate(0, 0)';
+                    });
+                });
+            }
+
+
+            // 3. Reveal Elements on Scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: unobserve after revealing to save resources
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
 </body>
 </html>
