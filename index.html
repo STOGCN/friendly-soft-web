@@ -228,13 +228,13 @@
                     <!-- Card 4 -->
                     <div class="team-card scroll-animate">
                         <div class="flex-1">
-                            <img src="../your-image.jpg" alt="Wutthikan Suksaen" class="team-avatar">
-                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Wutthikan Suksaen</h3>
+                            <img src="/xircons/img/pppwtk.jpeg" alt="Wutthikan Suksaen" class="team-avatar">
+                            <h3 class="text-xl font-semibold mt-4 text-white mb-2">Wuttikan Suksan</h3>
                             <p class="text-sm text-gray-300 mb-3">672110160</p>
                             <p class="text-primary font-medium mt-2 mb-3">Marketing Director</p>
                             <p class="text-gray-300 text-sm leading-relaxed">Driving brand growth and managing strategic marketing campaigns</p>
                         </div>
-                        <a href="./profiles/Wutthikan/Wutthikan.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
+                        <a id="xircons-link" href="/xircons/index.html" target="_blank" class="btn btn-primary mt-6 w-full">View Portfolio</a>
                     </div>
 
                     <!-- Card 5 -->
@@ -552,6 +552,40 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             observeElements();
+
+            // Intercept Xircons link to start backend before opening
+            const xirconsLink = document.getElementById('xircons-link');
+            if (xirconsLink) {
+                xirconsLink.addEventListener('click', async (e) => {
+                    try {
+                        // let normal target open later
+                        e.preventDefault();
+
+                        // Kick local control to start backend
+                        await fetch('http://localhost:3010/start-xircons', { method: 'POST' }).catch(() => {});
+
+                        // Wait until server is healthy (up to ~30s)
+                        const deadline = Date.now() + 30000;
+                        let healthy = false;
+                        while (Date.now() < deadline) {
+                            try {
+                                const res = await fetch('http://localhost:3000/health', { cache: 'no-store' });
+                                if (res.ok) { healthy = true; break; }
+                            } catch (_) {}
+                            await new Promise(r => setTimeout(r, 500));
+                        }
+
+                        const url = xirconsLink.getAttribute('href') || '/xircons/index.html';
+                        // Open the portfolio (served statically by that server). Fallback to original if not healthy
+                        const openUrl = healthy ? 'http://localhost:3000/xircons/index.html' : url;
+                        window.open(openUrl, '_blank');
+                    } catch (_) {
+                        // On any error, just open original href
+                        const url = xirconsLink.getAttribute('href') || '/xircons/index.html';
+                        window.open(url, '_blank');
+                    }
+                });
+            }
         });
     </script>
 </body>

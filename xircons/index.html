@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=3">
+    <link rel="preload" as="image" href="img/connect.png" fetchpriority="high"/>
+    <title>Craftfolio — pppwtk</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#overview" class="skip-link">Skip to main content</a>
+    <!-- layout guide -->
+    <div class="layout-guide" id="layoutGuide">
+        <div class="container">
+            <div class="col"></div><div class="col"></div><div class="col"></div>
+            <div class="col"></div><div class="col"></div><div class="col"></div>
+            <div class="col"></div><div class="col"></div><div class="col"></div>
+            <div class="col"></div><div class="col"></div><div class="col"></div>
+        </div>
+    </div>
+
+    <div class="dev-tools">
+        <button class="dev-btn" id="toggleLayout" aria-pressed="false">show grid</button>
+    </div>
+
+    <!-- hero section-->
+    <section class="hero" id="overview">
+        <div class="container">
+            <a href="index.html" class="logo-link" aria-label="Home">
+                <img src="img/logo.png" alt="logo" class="logo">
+            </a>
+            <nav class="navbar" aria-label="Primary">
+                <a href="index.html">overview</a>
+                <a href="#story">about</a>
+                <a href="#connect">connect</a>
+            </nav>
+            <img src="img/craftfolio.png" alt="craftfolio">
+        </div>
+    </section>
+
+    <!-- highlight-works- -->
+    <section class="works-box content-section" id="showcase">
+        <div class="works-container">
+            <a class="work-item" href="https://github.com/xircons/wifi-authenticator" data-repo="wifi-authenticator" aria-label="Open repo wifi-authen">
+                <img src="img/project/wifi-authen/1.png" alt="wifi-authen">
+                <span class="work-title">wifi authenticator</span>
+            </a>
+            <a class="work-item" href="https://github.com/xircons/word-scramble" data-repo="word-scramble" aria-label="Open repo word-scramble">
+                <img src="img/project/word-scramble/Screenshot 2568-08-12 at 15.59.58.png" alt="word-scramble">
+                <span class="work-title">word scramble</span>
+            </a>
+            <a class="work-item" href="https://github.com/xircons/auth-system" data-repo="auth-system" aria-label="Open repo auth-system">
+                <img src="img/project/auth-system/Screenshot 2568-08-12 at 15.55.21.png" alt="auth-system">
+                <span class="work-title">auth system</span>
+            </a>
+            <a class="work-item" href="https://github.com/xircons/store.atelien" data-repo="store.atelien" aria-label="Open repo store.atelien">
+                <img src="img/project/store.atelien/Screenshot 2568-08-12 at 17.13.06.png" alt="store.atelien">
+                <span class="work-title">store.atelien</span>
+            </a>
+            <a class="work-item" href="https://www.figma.com/design/Pkh8N2gg6b2VS3jsOuAxTP/weather-app?node-id=0-1&t=0CWEnVKrXBMnsZMC-1" aria-label="Open repo weather-app-ui-design">
+                <img src="img/project/weather-app-ui-design/Screenshot 2568-08-12 at 16.55.54.png" alt="weather-app-ui-design">
+                <span class="work-title">weather app ui design</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- about me- -->
+    <section class="about-me content-section" id="story">
+        <div class="about-container">
+            <div class="lists-two-col">
+                <p data-extra="150">I believe in a minimal and essential approach, focusing on finding a balance between form, function,
+                    and meaning. This is achieved by paying close attention to details and carefully researching materials.
+                    I design websites with a unique style and aesthetic, expressed through simple forms and clear expression
+                    of ideas, always placing user experience and communication at the heart of the development process.
+                </p>
+            </div>
+            <img src="img/pppwtk.jpeg" alt="Wuttikan Suksan">
+            <h1>about</h1>
+            <div class="lists-two-col">
+                <p data-reverse-extra="800">Hello, I'm Wuttikan. currently a student in the DII program at Chiang Mai University.
+                    I am passionate about web design and development, dedicated to creating work that is clean, original, 
+                    and visually engaging, with a strong focus on delivering an intuitive and seamless user experience.
+                </p>
+            </div>
+                <div class="lists-two-col">
+                <div class="col">
+                    <h2>what i love</h2>
+                    <ul>
+                        <li>Minimal & Swiss-style Web Design</li>
+                        <li>Feature Implementation</li>
+                        <li>Frontend Development </li>
+                        <li>Full Solo Projects</li>
+                        <li>Creative Coding</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h2>languages</h2>
+                    <ul>
+                        <li>English</li>
+                        <li>Thai</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- connect / contact -->
+    <section class="connect content-section" id="connect" aria-labelledby="contactTitle">
+        <div class="connect-container">
+            <div class="connect-grid">
+                <div class="info" aria-label="Contact information">
+                    <div class="info-group">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+66000000000">+66 93 319 9416</a></p>
+                    </div>
+                    <div class="info-group">
+                        <h4>Email</h4>
+                        <p><a href="xirconsss@hotmail.com">xirconsss@hotmail.com</a></p>
+                    </div>
+                    <div class="info-group">
+                        <h4>Address</h4>
+                        <p>Chiang Mai, Thailand</p>
+                    </div>
+                    <div class="info-group two-col">
+                        <div>
+                            <h4>Current&nbsp; time</h4>
+                            <p id="gmt7Time">time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form" aria-label="Contact form">
+                        <form action="#" method="post" novalidate>
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" placeholder="Wuttikan Suksan" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" placeholder="hello@example.com" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="company">I work at</label>
+                            <input id="company" name="company" type="text" placeholder="Company name" autocomplete="organization" required>
+                        </div>
+                        <div class="field">
+                            <label for="message">Details about the project</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Hello, I'm Wuttikan, can u help me..." required></textarea>
+                        </div>
+                        <div class="actions">
+                            <button type="submit">Send</button>
+                        </div>
+                    </form>
+
+                    <div class="social">
+                        <a href="https://www.facebook.com/pppwtk/" aria-label="facebook">facebook</a>
+                        <a href="https://www.instagram.com/pppwtk/" aria-label="instagram">instagram</a>
+                        <a href="https://github.com/xircons" aria-label="github">github</a>
+                    </div>
+                </div>
+            </div>
+
+            <img id="contactTitle" class="contact-title" src="img/connect.png" alt="" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+    <!-- Preloader Overlay -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="curtain curtain-top"></div>
+        <div class="curtain curtain-bottom"></div>
+        <div class="logo">
+            <img src="img/logo-white.png" alt="Logo">
+        </div>
+    </div>
+
+    <script src="js/preload.js"></script>
+    <!-- End Preloader Overlay -->
+    
+    <!-- Custom Cursor -->
+    <div id="customCursor" aria-hidden="true"></div>
+</body>
+</html>
